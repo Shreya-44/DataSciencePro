@@ -1,0 +1,72 @@
+"""
+print("Hey! I am your helper... Let me know how can I help you?")
+print("Please select in which field are you interested in working on")
+print(" 1. AI/ML/Robotics\n 2. Data Science/Data Mining/Data Analysis\n 3. Cybersecurity/Blockchain/Cloud Computing\n 4.Psychology\n 5. Full Stack/Web Development/DevOPS\n 6. Arts/Archaelogy/History\n 7. Biology/Neuroscience/Nanotechnology")
+ch1=input("choice: ").lower()
+print("Please select your further option:\n 1. Mentors Recomendations\n 2. Upcoming Journals")
+ch2=int(input("(1 or 2): "))
+if (ch2==1):
+    if(ch1=="ai" or ch1=="artificial intelligence"):
+        print("\nYou have selected mentor recommendations.\nLet's see what we got for you!")
+        print("These are the recommended mentors")
+        print("\n 1. Prerna Aggarwal\n 2. Rakesh Sharma\n 3. Rohit Kumar")
+    elif ((ch2==1)and((ch1=="ml" or "machine learning"))):
+        print ("\n You have chosen Machine Learning as a subject.")
+        print("These are the recommended mentors")
+        print("\n1. Amartya Saran\n 2. Shreya Khanna\n 3. Prajakta Patil")
+    else:
+        print("Please select from the above provided fields")
+
+elif(ch2==2):
+    print("\n1. International Journal of Empirical Economics (IJEE)	by Smart Manufacturing (SM)\n2. Journal of Clean Energy and Energy Storage (JOCEES) by Journal of Urban Futures (JUF)\n3. Health Nanotechnology by BMC")
+
+"""
+
+def main():
+    
+    print("Hey! I am your helper... Let me know how can I help you?")
+
+    
+    fields = ["AI/ML/Robotics", "Data Science/Data Mining/Data Analysis", "Cybersecurity/Blockchain/Cloud Computing", "Psychology", "Full Stack/Web Development/DevOPS", "Arts/Archaelogy/History", "Biology/Neuroscience/Nanotechnology"]
+
+    while True:
+
+        print("Please select in which field are you interested in working on")
+        for i in range(len(fields)):
+            print(f" {i + 1}. {fields[i]}")
+        ch1 = int(input("choice: ")) - 1
+
+        
+        if ch1 < 0 or ch1 >= len(fields):
+            print("Invalid choice. Please select from the above options.")
+            continue
+
+        print("Please select your further option:\n 1. Mentors Recomendations\n 2. Upcoming Journals")
+        ch2 = int(input("(1 or 2): "))
+
+        if ch2 not in [1, 2]:
+            print("Invalid choice. Please select 1 or 2.")
+            continue
+
+        if ch2 == 1:
+            if fields[ch1] == "AI/ML/Robotics":
+                print("\nYou have selected mentor recommendations.\nLet's see what we got for you!")
+                print("These are the recommended mentors")
+                print("\n 1. Prerna Aggarwal\n 2. Rakesh Sharma\n 3. Rohit Kumar")
+            elif fields[ch1] == "Data Science/Data Mining/Data Analysis":
+                print("\nYou have selected mentor recommendations.\nLet's see what we got for you!")
+                print("These are the recommended mentors")
+                print("\n 1. Amartya Saran\n 2. Shreya Khanna\n 3. Prajakta Patil")
+            else:
+                print("Please select from the above provided fields")
+
+        elif ch2 == 2:
+            print("\n1. International Journal of Empirical Economics (IJEE)	by Smart Manufacturing (SM)\n2. Journal of Clean Energy and Energy Storage (JOCEES) by Journal of Urban Futures (JUF)\n3. Health Nanotechnology by BMC")
+
+        print("Do you want to continue? (Y/N)")
+        ch3 = input().lower()
+        if ch3 not in ["y","Y"]:
+            break
+
+if __name__ == "__main__":
+    main()
